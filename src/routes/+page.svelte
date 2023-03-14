@@ -25,6 +25,8 @@
       left: scrollPosition,
       behavior: 'smooth'
     })
+    // add a hash to the url so the slide can be linked to
+    window.location.hash = `slide-${slideNumber}`
   }
 </script>
 
@@ -33,7 +35,7 @@
 <section id="gallery">
   <article id="container">
      {#each listOfSlides as slide, i }
-      <div id="slide-{i}">
+      <div id="slide-{i}" class="slide">
       {i}
         <img class="img" src={slide} alt="slide-{i}" />
       </div>
@@ -57,6 +59,7 @@
 	article#container {
 		height: 300px;
 		scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 		overflow-x: scroll;
 		display: flex;
 		flex-direction: row;
@@ -77,6 +80,10 @@
 		scroll-snap-align: center;
 		background-color: red;
 	}
+
+  div.slide:target {
+    border: 2px solid blue;
+  }
 
 	div > .img {
 		display: block;
