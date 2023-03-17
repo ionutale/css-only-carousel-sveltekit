@@ -14,26 +14,30 @@
 </script>
 
 <h1>css only carousel</h1>
+	<p>
+		go ahead and disable the javascript 
+	</p>
+	<code>cmd + shift + p > 'disable javascript'</code>
+	<p>and refresh the page</p>
 
 <section id="gallery">
 	<article id="container">
 		{#each listOfSlides as slide, i}
 			<div id="slide-{i}" class="slide">
-				{i}
 				<img class="img" src={slide} alt="slide-{i}" />
 			</div>
 		{/each}
 	</article>
 	<article id="segment">
 		{#each listOfSlides as slide, i}
-			<a href="#slide-{i}" class="segmentButton">{i - 1}</a>
+			<a href="#slide-{i}" class="segmentButton">{i}</a>
 		{/each}
 	</article>
 </section>
 
 <style>
 	section {
-		width: 98vw;
+		width: 50vw;
 		height: 300px;
 		max-width: 1440px;
 		margin: 0 auto;
@@ -62,12 +66,30 @@
 		justify-content: center;
 		position: relative;
 		scroll-snap-align: center;
-		background-color: red;
+		background-color: white;
 	}
 
+	div.slide {
+		display: block;
+		background-color: white;
+		width: 300px;
+		height: 300px;
+	} 
+	
+	/*
 	div.slide:target {
 		border: 2px solid blue;
+	} */
+
+	div.slide:target .img {
+		transform: scale(1.0);
+		transition: all 0.8s 0s;
 	}
+
+	div.slide .img {
+		transform: scale(1.2);
+	}
+
 
 	div > .img {
 		display: block;
@@ -94,12 +116,13 @@
 
 	.segmentButton {
 		display: inline-block;
-		width: 3rem;
-		height: 3rem;
+		padding: 3rem;
 		border-radius: 50%;
 		background-color: #ccc;
 		margin: 0 0.5rem;
 		cursor: pointer;
+		text-align: center;
+		vertical-align: center;
 	}
 
 	.segmentButton:hover {
