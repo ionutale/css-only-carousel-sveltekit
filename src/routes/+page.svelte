@@ -66,7 +66,7 @@
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
-		gap: 1rem;
+		gap: 3.5rem;
     width: fit-content;
 	}
 
@@ -76,7 +76,7 @@
     }
 
 		article#carousel {
-			gap: 1rem;
+			gap: 6rem;
 		}
 	}
 
