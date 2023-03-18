@@ -12,15 +12,19 @@
 	];
 
 </script>
-
 <main>
-  <h1>css only carousel</h1>è
+  <h1>css only carousel</h1>
     <p>
       go ahead and disable the javascript 
     </p>
     <code>cmd + shift + p > 'disable javascript'</code>
     <p>and refresh the page</p>
 
+    <noscript>
+      <!-- anchor linking to external file -->
+      <h2>🎉 javascript is disabled 🎉</h2> 
+      <h3>now enjoy the carousel</h3>
+    </noscript>
   <section id="gallery">
     <article id="carousel">
       {#each listOfSlides as slide, i}
@@ -36,7 +40,6 @@
     {/each}
   </article>
 </main>
-
 <style>
   h1 {
     text-align: center;
