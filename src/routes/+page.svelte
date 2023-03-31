@@ -39,6 +39,23 @@
       <a href="#slide-{i}" class="segmentButton"></a>
     {/each}
   </article>
+<br>
+<br>
+<br>
+  <section id="gallery">
+    <article id="carousel">
+      {#each listOfSlides as slide, i}
+        <div id="slide-2-{i}" class="slide">
+          <img class="img" src={slide} alt="slide-{i}" />
+        </div>
+      {/each}
+    </article>
+  </section>
+  <article id="segment">
+    {#each listOfSlides as slide, i}
+      <a href="#slide-2-{i}" class="segmentButton"></a>
+    {/each}
+  </article>
 </main>
 <style>
   h1 {
