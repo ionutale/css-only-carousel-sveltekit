@@ -1,15 +1,21 @@
 <script lang="ts">
-	const listOfSlides = [
-		'https://picsum.photos/id/1000/800',
-		'https://picsum.photos/id/1000/800',
-		'https://picsum.photos/id/1001/800',
-		'https://picsum.photos/id/1002/800',
-		'https://picsum.photos/id/1003/800',
-		'https://picsum.photos/id/1004/800',
-		'https://picsum.photos/id/1005/800',
-		'https://picsum.photos/id/1006/800',
-		'https://picsum.photos/id/1006/800'
-	];
+
+  const randomNumber = () => Math.floor(Math.random() * 1000);
+
+	const generatePictureLinks = () => [
+    `https://picsum.photos/id/${randomNumber()}/800`,
+    `https://picsum.photos/id/${randomNumber()}/800`,
+    `https://picsum.photos/id/${randomNumber()}/800`,
+    `https://picsum.photos/id/${randomNumber()}/800`,
+    `https://picsum.photos/id/${randomNumber()}/800`,
+    `https://picsum.photos/id/${randomNumber()}/800`,
+    `https://picsum.photos/id/${randomNumber()}/800`,
+    `https://picsum.photos/id/${randomNumber()}/800`,
+    `https://picsum.photos/id/${randomNumber()}/800`
+  ];
+
+  const listOfSlides = generatePictureLinks();
+  const listOfSlides2 = generatePictureLinks();
 
 </script>
 <main>
@@ -44,7 +50,7 @@
 <br>
   <section id="gallery">
     <article id="carousel">
-      {#each listOfSlides as slide, i}
+      {#each listOfSlides2 as slide, i}
         <div id="slide-2-{i}" class="slide">
           <img class="img" src={slide} alt="slide-{i}" />
         </div>
@@ -52,7 +58,7 @@
     </article>
   </section>
   <article id="segment">
-    {#each listOfSlides as slide, i}
+    {#each listOfSlides2 as slide, i}
       <a href="#slide-2-{i}" class="segmentButton"></a>
     {/each}
   </article>
