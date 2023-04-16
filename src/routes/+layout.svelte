@@ -17,6 +17,7 @@
 		background: #418db9;
 		color: #fff;
 		height: 4rem;
+    z-index: 10;
 	}
 
 	nav li {
