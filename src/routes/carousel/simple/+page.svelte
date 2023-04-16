@@ -58,125 +58,152 @@
   </article>
 </main>
 <style>
-  h1 {
-    text-align: center;
-    width: 100%;
-    height: 100%;
-  }
+   h1 {
+          text-align: center;
+          width: 100%;
+          height: 100%;
+        }
 
-  main {
-    max-width: 2000px;
-    margin: 0 auto;
-    padding: 1rem;
-    text-align: center;
-  }
-	section {
-		margin: 0 auto;
-    scroll-snap-type: x mandatory;
-		scroll-behavior: smooth;
-    scroll-snap-align: center;
-		overflow-x: scroll;
-    width: calc(100vw - 2rem);
-	}
+        main {
+          max-width: 2000px;
+          margin: 0 auto;
+          padding: 1rem;
+        }
+        
+        section {
+          margin: 0 auto;
+          scroll-snap-type: x mandatory;
+          scroll-behavior: smooth;
+          scroll-snap-align: center;
+          scroll-snap-stop: always;
+          overflow-x: scroll;
+          width: calc(100vw - 2rem);
+          height: 22rem;
+        }
 
-  section::-webkit-scrollbar {
-    display: none;
-  }
+        section::-webkit-scrollbar {
+          display: none;
+        }
 
-	article#carousel {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: nowrap;
-		gap: 3.5rem;
-    width: fit-content;
-	}
+        article#carousel {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          gap: 3.5rem;
+          width: fit-content;
+          margin-top: 2rem;
+        }
 
-	@media screen and (min-width: 768px) {
-    section {
-      width: 500px;
-    }
+        @media screen and (min-width: 768px) {
+          section {
+            width: 500px;
+          }
 
-		article#carousel {
-			gap: 6rem;
-		}
-	}
+          article#carousel {
+            gap: 6rem;
+          }
+        }
 
-	div.slide {
-		display: block;
-		background-color: rgb(137, 145, 228);
-		width: 270px;
-		height: 270px;
-    max-width: 300px;
-		position: relative;
-		scroll-snap-align: center;
-    -webkit-box-align: center;
-    aspect-ratio: 1/1;
-    box-sizing: border-box;
-    margin: 0px auto;
-    overflow: hidden;
-	} 
+        div.slide {
+          display: block;
+          background-color: rgb(137, 145, 228);
+          width: 270px;
+          height: 270px;
+          max-width: 300px;
+          position: relative;
+          scroll-snap-align: center;
+          -webkit-box-align: center;
+          aspect-ratio: 1/1;
+          box-sizing: border-box;
+          margin: 0px auto;
+          overflow: hidden;
+          border-radius: 3rem;
+          box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.51);
+        } 
 
-	div.slide:target .img {
-		animation: slideActive 0.8s;
-    direction: backwards;
-	}
+        div.slide:target .img {
+          animation: slideActive 0.8s;
+          direction: backwards;
+        }
 
-  @keyframes slideActive {
-    0% {
-      transform: scale(1.2);
-    }
-    100% {
-      transform: scale(1.0);
-    }
-  }
+        @keyframes slideActive {
+          0% {
+            transform: scale(1.6);
+          }
+          100% {
+            transform: scale(1.0);
+          }
+        }
 
-	div > .img {
-		display: block;
-		position: relative;
-		aspect-ratio: 1/1;
-		height: auto;
-		object-fit: cover;
-    width: 100%;
-    height: 100%;
-	}
+        div > .img {
+          display: block;
+          position: relative;
+          aspect-ratio: 1/1;
+          height: auto;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
 
-	article#carousel > div:first-child,
-	article#carousel > div:last-child {
-		visibility: hidden;
-	}
+        article#carousel > div:first-child,
+        article#carousel > div:last-child {
+          visibility: hidden;
+        }
 
-  article#segment > a:first-child,
-	article#segment > a:last-child {
-    display: none;
-  }
+        article#segment > a:first-child,
+        article#segment > a:last-child {
+          display: none;
+        }
 
-	article#segment {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 0.1rem;
-		margin: 1rem 0;
-	}
+        article#segment {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 0.1rem;
+          margin: 1rem 0;
+        }
 
-	.segmentButton {
-		padding: 0.25rem 1.5rem;
-		border-radius: 20%;
-		background-color: #ccc;
-		cursor: pointer;
-		text-align: center;
-	}
+        .segmentButton {
+          padding: 0.25rem 1.5rem;
+          border-radius: 1rem;
+          background-color: #ccc;
+          cursor: pointer;
+          text-align: center;
+          height: 1rem;
+        }
 
-  @media screen and (min-width: 768px) {
-    .segmentButton {
-      padding: 0.25rem 1.5rem;
-    }
-  }
+        @media screen and (min-width: 768px) {
+          .segmentButton {
+            padding: 0.25rem 1.5rem;
+          }
+        }
 
-	.segmentButton:hover {
-		background-color: #aaa;
-	}
+        .segmentButton:hover,
+        .segmentButton:target {
+          background-color: #4263eb;
+        }
 
-	.segmentButton:active {
-		background-color: #888;
-	}
+        .segmentButton:active {
+          background-color: #888;
+        }
+        
+        a {
+          display: block;
+           background: #4E9CAF;
+        }
+        
+        a:target {
+          background-color: blue;
+          color: white;
+        }
+        
+        div.demo {
+          width: 100px;
+          height: 100px;
+          background-color: green;
+        }
+        
+        div.demo:target {
+          background-color: red;
+        }
 </style>
