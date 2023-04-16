@@ -134,9 +134,11 @@
         @keyframes slideActive {
           0% {
             transform: scale(1.6);
+            border-radius: 3rem;
           }
           100% {
             transform: scale(1.0);
+            border-radius: 3rem;
           }
         }
 
