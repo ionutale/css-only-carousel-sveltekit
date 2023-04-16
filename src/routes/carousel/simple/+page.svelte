@@ -129,6 +129,7 @@
         div.slide:target .img {
           animation: slideActive 0.8s;
           direction: backwards;
+          border-size: 3rem;
         }
 
         @keyframes slideActive {
