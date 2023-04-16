@@ -73,7 +73,6 @@
         main {
           max-width: 2000px;
           margin: 0 auto;
-          padding: 1rem;
         }
         
         section {
