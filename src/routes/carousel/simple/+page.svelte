@@ -83,7 +83,7 @@
           scroll-snap-align: center;
           scroll-snap-stop: always;
           overflow-x: scroll;
-          width: calc(100vw - 2rem);
+          width: 100vw;
           height: 22rem;
         }
 
