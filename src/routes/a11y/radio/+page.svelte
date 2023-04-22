@@ -24,6 +24,7 @@
     flex-wrap: nowrap;
     gap: 0.5rem;
     margin: 0 auto;
+    width: fit-content;
   }
 
   article label {
