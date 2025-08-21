@@ -27,7 +27,7 @@
     </noscript>
     <ul id="segment">
       {#each listOfSlides as slide, i}
-        <a href="#slide-{i}" class="segmentButton" aria-label="slide-{i}" />
+        <li><a href="#slide-{i}" class="segmentButton" aria-label="Go to slide {i}">Slide {i}</a></li>
       {/each}
     </ul>
   <section id="gallery">
@@ -128,10 +128,10 @@
 		visibility: hidden;
 	}
 
-  ul#segment > a:first-child,
-	ul#segment > a:last-child {
-    display: none;
-  }
+ul#segment li:first-child > a,
+ul#segment li:last-child > a {
+  display: none;
+}
 
 	ul#segment {
 		display: flex;

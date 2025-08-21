@@ -1,4 +1,5 @@
-<article role="radiogroup" aria-label="Radio Group">
+<fieldset aria-label="Radio Group">
+  <legend class="sr-only">Radio Group</legend>
   <label for="radio-1" class="mzp-u-inline">
     <input type="radio" name="radios" id="radio-1" /> Option 1
   </label>
@@ -14,11 +15,11 @@
   <label for="radio-5" class="mzp-u-inline">
     <input type="radio" name="radios" id="radio-5" /> Option 5
   </label>
-</article>
+</fieldset>
 
 <style>
 
-  article {
+  fieldset {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -27,7 +28,7 @@
     width: fit-content;
   }
 
-  article label {
+  fieldset label {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -35,12 +36,12 @@
     align-items: center;
   }
 
-  article > label > input {
+  fieldset > label > input {
     margin: 0;
     outline: none;
   }
 
-  article > label:has(input:focus-visible) {
+  fieldset > label:has(input:focus-visible) {
     outline: 2px solid #000;
   }
 

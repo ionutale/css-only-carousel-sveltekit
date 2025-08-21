@@ -20,13 +20,26 @@
       currentActiveElement = target;
     }
   };
+
+  const handleKey = (e: KeyboardEvent) => {
+    // allow Enter to behave like click for keyboard users when contenteditable is active
+    if (e.key === 'Enter') {
+      const target = e.target as HTMLElement;
+      handleClick(new MouseEvent('click', { bubbles: true }));
+      e.preventDefault();
+    }
+  };
 </script>
 
 <section id="edit">
   <button data-is-edit-mode={isEditMode} on:click={toggleEditMode}>{isEditMode ? 'disable': 'enable'} edit mode</button>
 </section>
 <section>
-  <p contenteditable={isEditMode} on:click={handleClick}>new editorial</p>
+  {#if isEditMode}
+    <div role="textbox" contenteditable on:click={handleClick} on:keydown={handleKey} tabindex="0">new editorial</div>
+  {:else}
+    <p>new editorial</p>
+  {/if}
 </section>
 
 <style>
@@ -40,7 +53,8 @@
     width: fit-content;
   }
 
-  p:focus {
+  p:focus,
+  div[contenteditable]:focus {
     outline: 2px solid #be2b2b;
   }
 

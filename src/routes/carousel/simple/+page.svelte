@@ -39,7 +39,7 @@
 	</section>
 	<article id="segment">
 		{#each listOfSlides as slide, i}
-			<a href="#slide-{i}" class="segmentButton" />
+			<a href="#slide-{i}" class="segmentButton" aria-label="Go to slide {i}">Slide {i}</a>
 		{/each}
 	</article>
 	<br />
@@ -56,7 +56,7 @@
 	</section>
 	<article id="segment">
 		{#each listOfSlides2 as slide, i}
-			<a href="#slide-2-{i}" class="segmentButton" />
+			<a href="#slide-2-{i}" class="segmentButton" aria-label="Go to slide {i}">Slide {i}</a>
 		{/each}
 	</article>
 </main>
@@ -203,13 +203,5 @@
 		color: white;
 	}
 
-	div.demo {
-		width: 100px;
-		height: 100px;
-		background-color: green;
-	}
-
-	div.demo:target {
-		background-color: red;
-	}
+		/* removed demo styles */
 </style>
