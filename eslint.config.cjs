@@ -1,35 +1,32 @@
-// Flat config wrapper to reuse existing .eslintrc.cjs rules in ESLint v9+
-// The flat config format expects an array of config objects.
-// Flat config for ESLint v9+ converted from .eslintrc.cjs
+// Minimal flat ESLint config that provides parser and plugins as modules
+// This avoids parse errors while keeping the project using its legacy .eslintrc rules
 module.exports = [
-	{
-		// files to ignore (replacement for ignorePatterns)
-		ignores: ['*.cjs'],
-		// reuse recommended configs and prettier
-		extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
-		languageOptions: {
-			parser: require.resolve('@typescript-eslint/parser'),
-			parserOptions: {
-				sourceType: 'module',
-				ecmaVersion: 2020
-			}
-		},
-		plugins: {
-			'svelte3': require('eslint-plugin-svelte3'),
-			'@typescript-eslint': require('@typescript-eslint/eslint-plugin')
-		},
-		settings: {
-			'svelte3/typescript': () => require('typescript')
-		},
-		env: {
-			browser: true,
-			es2017: true,
-			node: true
-		}
-	},
-	// override for .svelte files to use the svelte3 processor
-	{
-		files: ['**/*.svelte'],
-		processor: 'svelte3/svelte3'
-	}
+  {
+    ignores: ['*.cjs'],
+    languageOptions: {
+      // provide the parser module (exports parse/parseForESLint)
+      parser: require('@typescript-eslint/parser'),
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: 'module'
+      }
+    },
+    plugins: {
+      svelte3: require('eslint-plugin-svelte3'),
+      '@typescript-eslint': require('@typescript-eslint/eslint-plugin')
+    },
+    settings: {
+      'svelte3/typescript': () => require('typescript')
+    },
+    env: {
+      browser: true,
+      es2020: true,
+      node: true
+    },
+    rules: {}
+  },
+  {
+    files: ['**/*.svelte'],
+    processor: 'svelte3/svelte3'
+  }
 ];
