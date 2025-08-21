@@ -8,7 +8,8 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --check . && eslint .",
+		"lint": "prettier --check . && pnpm exec eslint \"src/**/*.{js,ts}\"",
+		"lint:fix": "prettier --write . && pnpm exec eslint \"src/**/*.{js,ts}\" --fix",
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
@@ -16,7 +17,7 @@
 		"@sveltejs/kit": "^2.36.1",
 		"@typescript-eslint/eslint-plugin": "^8.40.0",
 		"@typescript-eslint/parser": "^8.40.0",
-		"eslint": "^8.57.1",
+		"eslint": "^9.33.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"prettier": "^3.6.2",
