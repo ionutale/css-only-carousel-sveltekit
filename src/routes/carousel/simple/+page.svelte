@@ -203,5 +203,5 @@
 		color: white;
 	}
 
-		/* removed demo styles */
+	/* removed demo styles */
 </style>
