@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  cookie@0.6.0: 1a0d3be60c7838f086974b157f843e9c9f15d1439f83433af65766dfd1ed1505
+
 importers:
 
   .:
@@ -1458,7 +1461,7 @@ snapshots:
       '@sveltejs/vite-plugin-svelte': 6.1.3(svelte@5.56.9(@typescript-eslint/types@8.40.0))(vite@7.3.6)
       '@types/cookie': 0.6.0
       acorn: 8.18.0
-      cookie: 0.6.0
+      cookie: 0.6.0(patch_hash=1a0d3be60c7838f086974b157f843e9c9f15d1439f83433af65766dfd1ed1505)
       devalue: 5.9.0
       esm-env: 1.2.2
       kleur: 4.1.5
@@ -1655,7 +1658,7 @@ snapshots:
 
   concat-map@0.0.1: {}
 
-  cookie@0.6.0: {}
+  cookie@0.6.0(patch_hash=1a0d3be60c7838f086974b157f843e9c9f15d1439f83433af65766dfd1ed1505): {}
 
   cross-spawn@7.0.6:
     dependencies:
